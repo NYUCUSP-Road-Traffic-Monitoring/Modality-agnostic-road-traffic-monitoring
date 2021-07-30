@@ -1,8 +1,12 @@
-# NYU CUSP Road Traffic Monitoring Video
+# NYU CUSP Road Traffic Monitoring
 
-**[Report]()** **[Website]()**
+**[Report]()**
 
-**Team members**: Eve Shi, Yao Hou **Directors**: Bea Steers, Magdalena Fuentes
+**[Website]()**
+
+**Team members**: Eve Shi, Yao Hou 
+
+**Directors**: Bea Steers, Magdalena Fuentes
 
 Support by: NYU Center for Urban Science and Progress, NYU Music and Audio Research Laboratory
 
