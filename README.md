@@ -22,7 +22,7 @@ We present a labelled traffic video dataset with 421 2-fps 10-second video clips
 
 ### Embeddings
 
-1. Untranslated embeddings: you can use codes from any current embedding methods. In this project, we use [yamnet](https://github.com/tensorflow/models/tree/master/research/audioset/yamnet) and resnet(https://github.com/pytorch/vision/blob/6db1569c89094cf23f3bc41f79275c45e9fcb3f3/torchvision/models/resnet.py#L124).
+1. Untranslated embeddings: you can use codes from any current embedding methods. In this project, we use [yamnet](https://github.com/tensorflow/models/tree/master/research/audioset/yamnet) and [resnet](https://github.com/pytorch/vision/blob/6db1569c89094cf23f3bc41f79275c45e9fcb3f3/torchvision/models/resnet.py#L124).
 2. Translated embeddings. You can use codes from [here](https://github.com/hohsiangwu/crossmodal).
 
 ### Analysis
