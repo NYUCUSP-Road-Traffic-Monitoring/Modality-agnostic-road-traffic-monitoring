@@ -1,50 +1,44 @@
-# annotation-reader-and-viz
-# NYU CUSP Road Traffic Monitoring Video Annotation
-Sponsors: Bea Steers, Magdalena Fuentes
+# NYU CUSP Road Traffic Monitoring Video
 
-Team members: Qianyi Eve Shi, Yao Hou
+**[Report]()** **[Website]()**
 
-This is an annotation dataset for road traffic monitoring. The dataset is currently used in the NYU CUSP capstone project **Modality-agnostic road traffic monitoring**. The original data is collected from the Bosch Group and part of TAU Urban Audio-Visual Scenes 2021, Development dataset. For pravicy, all personal information in the videos are all mosaic processed. 
+**Team members**: Eve Shi, Yao Hou **Directors**: Bea Steers, Magdalena Fuentes
 
-The data authorized by the Bosch Group is only for research purpose. The videos have a relatively clear and higher view of the objects.
+Support by: NYU Center for Urban Science and Progress, NYU Music and Audio Research Laboratory
 
-The TAU Urban Audio-Visual Scenes 2021 dataset contains 10-seconds video segments of major cities in Europe (Barcelona, Helsinki, Lisbon, London, Lyon, Milan, Paris, Prague, Stockholm, Vienna). Acoustic scenes include pedestrian streets, public squares, bridges, fast lanes, crossings, urban parks and so on.    
-Audio | Video | Duration 
------ | ----- | --------
-48kHz  | 30fps | Each clip is 10 sec
-24 bits | 1280*720 | Total 34hs 
-stereo| | Relevant 4hs
-Zoom P8+binaural |GoPro Hero 5|   
+Sponsors: Bosch
 
-For more information about TAU Urban Audio-Visual Scenes 2021, Development dataset, please visit: https://zenodo.org/record/4477542#.YLeK3JNKjMI
+This project provides a multi-modality machine learning framework for traffic monitoring, which fits either audio or video-images traffic data. Our framework eliminates the limitations of poor visibility or noisy environments that have a huge impact on single-modality methods and shows a comparable performance (76% accuracy).
 
-The group mixed the two original dataset together and the material is totally 1.2 hour long. The following plot shows the percentage of the components.   
-![image missing](../main/img_folder/dataset_pie.png)
+## Dataset
 
-# Basic Analysis   
-**Annotation Difficulty**  
-The group has considered mixing different difficulty level data together in the dataset. We use the number of annotated objects to distinguish the annotation difficulty.   
-Annotation Difficulty | Number of Annotated Objects   
---------------------- | ---------------------------
-Easy | < 4  
-Medium | >=4 && <10   
-Hard | >=10   
+We present a labelled traffic video dataset with 421 2-fps 10-second video clips, which contains different illumination and weather situations, to fill the gap of labeled dataset now in the field of traffic monitoring. To test our framework, you can download our dataset from [here](https://drive.google.com/drive/folders/1Ho6l0lmUZZKbzQdzj1Ly-LEUrOXNfeTT?usp=sharing). The instructions for using the dataset is in the root folder, you can also find it at [this link](https://drive.google.com/file/d/1i2br-krYcBnghRblgjJFkUhVGNvAiJDu/view?usp=sharing).
 
-The following pie plot and bar plot illustrate the difficulty composition of dataset. The Easy clips ranks the first, Medium is the second, and Hard is the last.      
+## Codes
 
-![image missing](../main/img_folder/level_pie.png) ![image missing](../main/img_folder/level_bar.png)  
+### Embeddings
 
-**Labels**    
-Label is the standard of image classification. The more detailed the classification, the higher the accuracy of the model. The group labelled the object into 5 categories: bicycle, bus, car, truck, motorbike. The plots show their proportion. Cars are the most common objects in the annotation. The rest labels occupy a little in this annotation dataset.
+1. Untranslated embeddings: you can use codes from any current embedding methods. In this project, we use [yamnet](https://github.com/tensorflow/models/tree/master/research/audioset/yamnet) and resnet(https://github.com/pytorch/vision/blob/6db1569c89094cf23f3bc41f79275c45e9fcb3f3/torchvision/models/resnet.py#L124).
+2. Translated embeddings. You can use codes from [here](https://github.com/hohsiangwu/crossmodal).
 
-![image missing](../main/img_folder/label_pie.png) ![image missing](../main/img_folder/label_bar.png)  
+### Analysis
 
-**Illumination Condition**       
-The illumination condition affects the result of image segmentation and might reduce the recognition rate. To generalize the model, the dataset has mixed day and night conditions. The easy level occurs the most and the hard level is the least occured in the day annotations, the medium level occurs the most and the easy level is the least in the night annotations.    
+#### Installation
 
-![image missing](../main/img_folder/daynight_pie.png) ![image missing](../main/img_folder/daynight_bar.png)  
+```sh
+# Install Python libraries using conda
+conda env create -f environment.yml
+conda activate modality_agnostic
+python -m ipykernel install --user --name modality_agnostic --display-name "modality_agnostic"
 
-**Weather**     
-Different weather conditions have effect on the annotation. The group noticed 2 special weather conditions: snow, rain. The weather condition in the dataset is also shown below. About 10 percent of data is under special weather. The rainy days are all easy-level but snowy days cover all difficulty levels. 
+# Run the notebook
+jupyter notebook
+```
 
-![image missing](../main/img_folder/weather_pie.png) ![image missing](../main/img_folder/weather_bar.png) 
+### Read Annotations
+
+If you use our example dataset, you can download annotations from [here](https://drive.google.com/file/d/19oscKAd2WnwM6mheuv3tbkMQC3vQ7sUb/view?usp=sharing). Otherwise, you can use `utils/annotation_reader.py` as an example to read your own annotations.
+
+### Models and Analysis
+
+Run annotations and embeddings with `*.ipynb`.

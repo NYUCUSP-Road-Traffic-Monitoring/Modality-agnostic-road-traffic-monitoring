@@ -1,0 +1,13 @@
+name: modality_agnostic
+
+dependencies:
+  - python=3.6
+  - numpy
+  - ipython
+  - jupyter
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - seaborn
+  - glob
+  - zipfile
