@@ -1,8 +1,8 @@
 # NYU CUSP Road Traffic Monitoring
 
-**[Report]()**
+**[Report](https://drive.google.com/file/d/1DuPVMuAD1q14lv_aR2Narh22oJH0sw4b/view?usp=sharing)**
 
-**[Website]()**
+**[Website](https://sites.google.com/nyu.edu/ma-traffic-monitoring/framework?authuser=0)**
 
 **Team members**: Eve Shi, Yao Hou 
 
